@@ -5,18 +5,30 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    public Vector2 movementInput;
+    PlayerStats myStats;
+    private Vector2 movementInput;
     private Rigidbody2D myRigidBody;
-    public float playerSpeed;
-    public float playerAcceleration;
-    public float playerDecceleration;
-    public float velocityPower;
+    private float playerSpeed;
+    private float playerAcceleration;
+    private float playerDecceleration;
+    private float velocityPower;
     void Awake()
     {
+        velocityPower = 0.9f;
+
         myRigidBody = GetComponent<Rigidbody2D>();
+        myStats = GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
+    
+    void Update(){
+        #region UpdateStats
+        playerSpeed = myStats.speed;
+        playerAcceleration = myStats.acceleration;
+        playerDecceleration = myStats.frictionPower;
+        #endregion
+    }
+
     void FixedUpdate()
     {
         #region InputForces
