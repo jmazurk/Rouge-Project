@@ -20,11 +20,27 @@ public class PlayerShootScript : MonoBehaviour
         myStats.updateCurrentFireRateCooldown();
 
         if(shootingDirection.magnitude > 0 && myStats.canShoot()){
-            spawnBullet(shootingDirection);
+            shootBullet(shootingDirection);
         }
     }
 
-    void spawnBullet(Vector2 direction){
+    void shootBullet(Vector2 direction){
+        #region add half player velocity to bullet velocity on the second axis
+        Vector2 halfOtherAxisHeroVelocity = myRigidbody.velocity;
+        Vector2 directionInversed = new Vector2 (0 ,0);
+        if(direction.x == 0) directionInversed.x = 1;
+        else directionInversed.y = 1;
+
+        halfOtherAxisHeroVelocity *= directionInversed; //leaves only the part in the direction the player is not shooting
+        halfOtherAxisHeroVelocity /= 2;
+
+        Vector2 bulletVelocity = direction * myStats.bulletSpeed + halfOtherAxisHeroVelocity;
+        #endregion
+
+        spawnBullet(bulletVelocity.normalized, bulletVelocity.magnitude);
+    }
+
+    void spawnBullet(Vector2 direction, float speed){
         GameObject newBullet;
         StraightBulletScript newBulletStats;
 
@@ -33,7 +49,8 @@ public class PlayerShootScript : MonoBehaviour
         newBullet = Instantiate(straightBullet, bulletStartingPosition, transform.rotation);
         newBulletStats = newBullet.GetComponent<StraightBulletScript>();
 
-        newBulletStats.speed = myStats.bulletSpeed;
+        //newBulletStats.speed = myStats.bulletSpeed;
+        newBulletStats.speed = speed;
         newBulletStats.movementDirection = direction;
         newBulletStats.hasLifeSpan = true;
         newBulletStats.lifeSpan = myStats.bulletLifespan;

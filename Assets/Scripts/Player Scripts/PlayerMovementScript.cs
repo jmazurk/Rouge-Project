@@ -12,6 +12,9 @@ public class PlayerMovementScript : MonoBehaviour
     private float playerAcceleration;
     private float playerDecceleration;
     private float velocityPower;
+
+    public Animator animator;
+
     void Awake()
     {
         velocityPower = 0.9f;
@@ -46,6 +49,13 @@ public class PlayerMovementScript : MonoBehaviour
         movementForce *= multiplier;
         //apply force
         myRigidBody.AddForce(movementForce);
+        #endregion
+
+        #region animateMovement
+        animator.SetFloat("Horizontal", movementInput.x);
+        animator.SetFloat("Vertical", movementInput.y);
+        animator.SetFloat("Speed", myRigidBody.velocity.magnitude);
+        animator.SetBool("HasInput", movementInput.magnitude > 0);
         #endregion
     }
 
