@@ -6,13 +6,16 @@ public abstract class ACharacter : AEntity
 {
     public float frictionPower {get;set;}
     public float acceleration {get;set;}
-    public float maxHealth {get;set;}
-    public float currentHealth {get;set;}
+    public float maxHealth;
+    public float currentHealth;
     public float fireRate;
     private float currentFireRateCooldown;
     public float bulletSpeed;
     public float bulletLifespan;
-    public float bulletOffset;
+    public float bulletOffset {get;set;}
+    public float bulletDamage;
+
+    public float bodyDamage;
     public void updateCurrentFireRateCooldown(){
         currentFireRateCooldown -= Time.deltaTime;
     }
@@ -23,5 +26,19 @@ public abstract class ACharacter : AEntity
 
     public void proccessShot(){
         currentFireRateCooldown = fireRate;
+    }
+
+    public abstract void processDeath();
+    public abstract void updateHealth();
+    public void getDamaged(float damage){
+        currentHealth -= damage;
+        if(currentHealth <= 0) processDeath();
+        updateHealth();
+    }
+
+    public void addHealth(float health){
+        currentHealth += health;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        updateHealth();
     }
 }

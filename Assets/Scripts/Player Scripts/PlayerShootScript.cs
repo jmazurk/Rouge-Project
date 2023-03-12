@@ -42,18 +42,21 @@ public class PlayerShootScript : MonoBehaviour
 
     void spawnBullet(Vector2 direction, float speed){
         GameObject newBullet;
-        StraightBulletScript newBulletStats;
+        Bullet newBulletStats;
 
         Vector2 bulletStartingPosition = myRigidbody.position + direction * myStats.bulletOffset;
 
         newBullet = Instantiate(straightBullet, bulletStartingPosition, transform.rotation);
-        newBulletStats = newBullet.GetComponent<StraightBulletScript>();
+        newBulletStats = newBullet.GetComponent<Bullet>();
+
+        newBullet.layer = Layers.PLAYER_BULLET_LAYER;
 
         //newBulletStats.speed = myStats.bulletSpeed;
         newBulletStats.speed = speed;
         newBulletStats.movementDirection = direction;
         newBulletStats.hasLifeSpan = true;
         newBulletStats.lifeSpan = myStats.bulletLifespan;
+        newBulletStats.damage = myStats.bulletDamage;
 
         myStats.proccessShot();
     }

@@ -8,6 +8,7 @@ public abstract class AProjectile : AEntity
     public float lifeSpan;
     public bool hasLifeSpan;
     public Vector2 movementDirection;
+    public float damage;
 
     public abstract void destroyProjectile();
     public abstract void Update();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInitializer : MonoBehaviour
 {
     PlayerStats myStats;
+    private Data dataManager;
     void Awake()
     {
         myStats = GetComponent<PlayerStats>();
@@ -17,5 +18,12 @@ public class PlayerInitializer : MonoBehaviour
         myStats.bulletSpeed = 1.5f;
         myStats.bulletLifespan = 1;
         myStats.bulletOffset = 0.1f;
+        myStats.bulletDamage = 1;
+
+        myStats.currentHealth = 6;
+        myStats.maxHealth = 6;
+
+        dataManager = GameObject.FindGameObjectWithTag("data_manager").GetComponent<Data>();
+        dataManager.playerStats = myStats;
     }
 }

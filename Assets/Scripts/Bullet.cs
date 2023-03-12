@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StraightBulletScript : AProjectile
+public class Bullet : AProjectile
 {
     private Rigidbody2D myRigidbody;
 

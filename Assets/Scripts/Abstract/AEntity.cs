@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class AEntity : MonoBehaviour
 {
+    
     public float speed {get;set;}
     public int id;
 }
