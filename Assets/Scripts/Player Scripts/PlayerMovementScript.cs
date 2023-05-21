@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    PlayerStats myStats;
+    CreatureStats myStats;
     private Vector2 movementInput;
     private Rigidbody2D myRigidBody;
     private float playerSpeed;
@@ -20,7 +20,7 @@ public class PlayerMovementScript : MonoBehaviour
         velocityPower = 0.9f;
 
         myRigidBody = GetComponent<Rigidbody2D>();
-        myStats = GetComponent<PlayerStats>();
+        myStats = GetComponent<CreatureStats>();
     }
 
     

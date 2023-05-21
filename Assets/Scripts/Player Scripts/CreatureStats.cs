@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : ACharacter
+public class CreatureStats : ACharacter
 {  
     public override void updateHealth(){
 
     }
     public override void processDeath()
     {
-        Debug.Log("Game over!");
         Destroy(gameObject);
     }
 

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Data : MonoBehaviour
 {
-    public PlayerStats playerStats;
+    public CreatureStats playerStats;
 }

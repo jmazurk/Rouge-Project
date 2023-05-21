@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthUIScript : MonoBehaviour
 {
     private Data dataManager;
-    private PlayerStats playerStats;
+    private CreatureStats playerStats;
     private int health;
     private int maxHealth;
     private int oldHealth;

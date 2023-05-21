@@ -7,13 +7,13 @@ public class PlayerShootScript : MonoBehaviour
 {
     public Vector2 shootingDirection;
     private Rigidbody2D myRigidbody;
-    PlayerStats myStats;
+    CreatureStats myStats;
     public GameObject straightBullet;
 
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        myStats = GetComponent<PlayerStats>();
+        myStats = GetComponent<CreatureStats>();
     }
 
     void FixedUpdate(){

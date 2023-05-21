@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyCollisionScript : MonoBehaviour
 {
-    private EnemyStats myStats;
+    private CreatureStats myStats;
 
     public void Awake(){
-        myStats = GetComponent<EnemyStats>();
+        myStats = GetComponent<CreatureStats>();
     }
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.layer == Layers.PLAYER_BULLET_LAYER){

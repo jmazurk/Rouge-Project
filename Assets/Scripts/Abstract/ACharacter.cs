@@ -14,6 +14,8 @@ public abstract class ACharacter : AEntity
     public float bulletLifespan;
     public float bulletOffset {get;set;}
     public float bulletDamage;
+    public float armourLinear = 0;
+    public float armourPercentage = 0;
 
     public float bodyDamage;
     public void updateCurrentFireRateCooldown(){
@@ -31,6 +33,8 @@ public abstract class ACharacter : AEntity
     public abstract void processDeath();
     public abstract void updateHealth();
     public void getDamaged(float damage){
+        damage -= armourLinear;
+        damage = (1 - armourPercentage) * damage;
         currentHealth -= damage;
         if(currentHealth <= 0) processDeath();
         updateHealth();

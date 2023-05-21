@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerInitializer : MonoBehaviour
 {
-    PlayerStats myStats;
+    CreatureStats myStats;
     private Data dataManager;
     void Awake()
     {
-        myStats = GetComponent<PlayerStats>();
+        myStats = GetComponent<CreatureStats>();
         myStats.speed = 1.3f;
         myStats.acceleration = 10f;
         myStats.frictionPower = 7f;

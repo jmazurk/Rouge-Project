@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BoneMeatInit : MonoBehaviour
 {
-    EnemyStats myStats;
+    CreatureStats myStats;
 
     void Awake(){
-        myStats = gameObject.GetComponent<EnemyStats>();
+        myStats = gameObject.GetComponent<CreatureStats>();
 
         myStats.maxHealth = 7;
         myStats.currentHealth = 7;
