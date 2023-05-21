@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CreatureStats : ACharacter
 {  
+    public Effects myEffects;
     public override void updateHealth(){
 
     }
@@ -11,7 +12,6 @@ public class CreatureStats : ACharacter
     {
         Destroy(gameObject);
     }
-
     public void Update(){
         currentHealth = Mathf.Min(currentHealth, maxHealth);
     }

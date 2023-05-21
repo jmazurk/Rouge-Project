@@ -17,6 +17,8 @@ public class PlayerCollisionScript : MonoBehaviour
             .bodyDamage);
 
             gameObject.GetComponent<Rigidbody2D>().velocity *= -2;
+
+            myStats.myEffects.addInvincibility(3);
         }
         else if(collision.gameObject.layer == Layers.ENEMY_BULLET_LAYER){
             
@@ -25,6 +27,7 @@ public class PlayerCollisionScript : MonoBehaviour
             .damage);
 
             Destroy(collision.gameObject);
+            myStats.myEffects.addInvincibility(3);
         }
     }
 }

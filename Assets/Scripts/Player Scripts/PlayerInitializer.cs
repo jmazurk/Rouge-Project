@@ -22,8 +22,12 @@ public class PlayerInitializer : MonoBehaviour
 
         myStats.currentHealth = 6;
         myStats.maxHealth = 6;
+        myStats.armourLinear = 0;
+        myStats.armourPercentage = 0;
 
         dataManager = GameObject.FindGameObjectWithTag("data_manager").GetComponent<Data>();
         dataManager.playerStats = myStats;
+
+        myStats.myEffects = GetComponent<Effects>();
     }
 }

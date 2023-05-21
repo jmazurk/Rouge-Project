@@ -35,7 +35,8 @@ public abstract class ACharacter : AEntity
     public void getDamaged(float damage){
         damage -= armourLinear;
         damage = (1 - armourPercentage) * damage;
-        currentHealth -= damage;
+        
+        if(damage > 0) currentHealth -= damage;
         if(currentHealth <= 0) processDeath();
         updateHealth();
     }
