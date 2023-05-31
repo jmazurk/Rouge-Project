@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementScript : MonoBehaviour
+public class Effects : MonoBehaviour
 {
-    private Rigidbody2D myRigidBody;
-    void Awake()
+    CreatureStats myStats;
+    void Start()
     {
-        
+        myStats = GetComponent<CreatureStats>();
     }
 
     // Update is called once per frame
