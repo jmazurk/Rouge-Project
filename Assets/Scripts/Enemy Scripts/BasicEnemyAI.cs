@@ -12,7 +12,7 @@ public class BasicEnemyAI : MonoBehaviour
         myStats = GetComponent<CreatureStats>();
         dataManager = GameObject.FindGameObjectWithTag("data_manager").GetComponent<Data>();
         playerStats = dataManager.playerStats;
-        //test pull request
+        //test pull request2
     }
 
     
