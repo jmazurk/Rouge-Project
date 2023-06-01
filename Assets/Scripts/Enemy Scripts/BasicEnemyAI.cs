@@ -16,7 +16,7 @@ public class BasicEnemyAI : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         dataManager = GameObject.FindGameObjectWithTag("data_manager").GetComponent<Data>();
         playerStats = dataManager.playerStats;

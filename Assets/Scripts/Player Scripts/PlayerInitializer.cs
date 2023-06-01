@@ -29,6 +29,5 @@ public class PlayerInitializer : MonoBehaviour
         dataManager.playerStats = myStats;
 
         myStats.myEffects = GetComponent<Effects>();
-        myStats.myRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 }
