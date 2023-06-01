@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Bullet : AProjectile
 {
-    private Rigidbody2D myRigidbody;
 
-    public void Start(){
+    public void Awake(){
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
     public override void Update()

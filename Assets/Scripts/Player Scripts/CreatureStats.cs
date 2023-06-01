@@ -12,6 +12,11 @@ public class CreatureStats : ACharacter
     {
         Destroy(gameObject);
     }
+
+    public void Awake(){
+        //myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+    }
+
     public void Update(){
         currentHealth = Mathf.Min(currentHealth, maxHealth);
     }

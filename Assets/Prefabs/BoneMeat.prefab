@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2876261340756948605}
   - component: {fileID: 6145400257777070758}
   - component: {fileID: 5358728541657875484}
+  - component: {fileID: 187695759703245689}
   m_Layer: 8
   m_Name: BoneMeat
   m_TagString: Untagged
@@ -182,3 +183,16 @@ MonoBehaviour:
   armourLinear: 0
   armourPercentage: 0
   bodyDamage: 0
+  myEffects: {fileID: 0}
+--- !u!114 &187695759703245689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876261340756948600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48766cbc76e7bf705944e477b1ab2c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
