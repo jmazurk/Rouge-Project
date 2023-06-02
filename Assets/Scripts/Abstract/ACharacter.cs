@@ -16,8 +16,9 @@ public abstract class ACharacter : AEntity
     public float bulletDamage;
     public float armourLinear = 0;
     public float armourPercentage = 0;
-
     public float bodyDamage;
+    public bool hasKnockback;
+    public Effects myEffects;
     public void updateCurrentFireRateCooldown(){
         currentFireRateCooldown -= Time.deltaTime;
     }
@@ -35,6 +36,8 @@ public abstract class ACharacter : AEntity
     public void getDamaged(float damage){
         damage -= armourLinear;
         damage = (1 - armourPercentage) * damage;
+
+        if(myEffects.isInvincible == true) damage = 0;
         
         if(damage > 0) currentHealth -= damage;
         if(currentHealth <= 0) processDeath();
@@ -45,5 +48,9 @@ public abstract class ACharacter : AEntity
         currentHealth += health;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
         updateHealth();
+    }
+
+    public void getKnockbacked(){
+
     }
 }

@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 2876261340756948605}
   - component: {fileID: 6145400257777070758}
   - component: {fileID: 5358728541657875484}
-  - component: {fileID: 187695759703245689}
+  - component: {fileID: 5747184508922747676}
+  - component: {fileID: 5142501514708802958}
   m_Layer: 8
   m_Name: BoneMeat
   m_TagString: Untagged
@@ -173,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726e2908e0e846c4d97f7b3e8a6a8fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRigidbody: {fileID: 0}
   id: 0
   maxHealth: 0
   currentHealth: 0
@@ -183,8 +185,9 @@ MonoBehaviour:
   armourLinear: 0
   armourPercentage: 0
   bodyDamage: 0
+  hasKnockback: 0
   myEffects: {fileID: 0}
---- !u!114 &187695759703245689
+--- !u!114 &5747184508922747676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,6 +196,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2876261340756948600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48766cbc76e7bf705944e477b1ab2c85, type: 3}
+  m_Script: {fileID: 11500000, guid: 512291c274039ba43913850b7319a609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvincible: 0
+--- !u!114 &5142501514708802958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876261340756948600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de3e7190d7d3d5ff8e9ceded82eb8d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVertical: 0.9
+  maxHorizontal: 1.7

@@ -21,9 +21,10 @@ public class BasicEnemyAI : MonoBehaviour
         dataManager = GameObject.FindGameObjectWithTag("data_manager").GetComponent<Data>();
         playerStats = dataManager.playerStats;
 
-        myStats.myRigidbody.gameObject.transform.position=  Vector3.Lerp(
+
+        myStats.myRigidbody.gameObject.transform.position=  Vector3.MoveTowards(
             gameObject.transform.position,
              playerStats.myRigidbody.gameObject.transform.position, 
-             0.01f);
+             0.02f);
     }
 }

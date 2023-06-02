@@ -5,7 +5,7 @@ using UnityEngine;
 public class Effects : MonoBehaviour
 {
     CreatureStats myStats;
-    private bool isInvincible = false;
+    public bool isInvincible = false;
     private float invincibilityTimer;
     void Start()
     {

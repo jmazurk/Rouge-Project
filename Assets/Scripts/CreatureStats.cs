@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CreatureStats : ACharacter
 {  
-    public Effects myEffects;
     public override void updateHealth(){
 
     }
@@ -15,6 +14,7 @@ public class CreatureStats : ACharacter
 
     public void Awake(){
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        myEffects = GetComponent<Effects>();
     }
 
     public void Update(){
