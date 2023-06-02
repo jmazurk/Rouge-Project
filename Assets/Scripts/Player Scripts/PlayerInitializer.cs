@@ -6,7 +6,7 @@ public class PlayerInitializer : MonoBehaviour
 {
     CreatureStats myStats;
     private Data dataManager;
-    void Awake()
+    void Start()
     {
         myStats = GetComponent<CreatureStats>();
         myStats.speed = 1.3f;
@@ -29,5 +29,7 @@ public class PlayerInitializer : MonoBehaviour
 
         dataManager = GameObject.FindGameObjectWithTag("data_manager").GetComponent<Data>();
         dataManager.playerStats = myStats;
+
+        myStats.myEffects.addInvincibility(2);
     }
 }

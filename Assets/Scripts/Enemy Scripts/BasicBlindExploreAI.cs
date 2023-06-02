@@ -27,7 +27,7 @@ public class BasicBlindExploreAI : MonoBehaviour
     void Update()
     {
        
-        if(Vector3.Distance(currentDestination, gameObject.transform.position) < 0.1f) hasDestination = false;
+        if(Vector3.Distance(currentDestination, gameObject.transform.position) < 0.01f) hasDestination = false;
 
         if(hasDestination == false){
             
@@ -44,7 +44,7 @@ public class BasicBlindExploreAI : MonoBehaviour
         myStats.myRigidbody.gameObject.transform.position=  Vector3.MoveTowards(
             gameObject.transform.position,
              currentDestination, 
-             0.01f);
+             0.02f);
 
 
     }

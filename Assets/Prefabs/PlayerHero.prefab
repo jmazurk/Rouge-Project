@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 7095839897007671742}
   - component: {fileID: 7095839897007671743}
   - component: {fileID: 7095839897007671736}
-  - component: {fileID: 7095839897007671737}
   - component: {fileID: 7095839897007671738}
+  - component: {fileID: 7095839897007671737}
   - component: {fileID: 7095839897007671739}
   - component: {fileID: 7095839897007671716}
   m_Layer: 6
@@ -233,18 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7095839897007671716}
---- !u!114 &7095839897007671737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7095839897007671717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd1c2ac724ff5449827146af735a4fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7095839897007671738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,11 +245,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726e2908e0e846c4d97f7b3e8a6a8fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myRigidbody: {fileID: 0}
   id: 0
+  maxHealth: 0
+  currentHealth: 0
   fireRate: 0
   bulletSpeed: 0
   bulletLifespan: 0
-  bulletOffset: 0
+  bulletDamage: 0
+  armourLinear: 0
+  armourPercentage: 0
+  bodyDamage: 0
+  hasKnockback: 0
+  myEffects: {fileID: 0}
+--- !u!114 &7095839897007671737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095839897007671717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd1c2ac724ff5449827146af735a4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7095839897007671739
 MonoBehaviour:
   m_ObjectHideFlags: 0
