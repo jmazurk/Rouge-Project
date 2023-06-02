@@ -14,7 +14,7 @@ public class CreatureStats : ACharacter
     }
 
     public void Awake(){
-        //myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        myRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
     public void Update(){
